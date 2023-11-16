@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js advance</title>
+</head>
+<body>
+    <!-- <script>
+        // synchronous
+        console.log("I");
+
+        console.log("eat");
+
+        console.log("icecream");
+
+        console.log("with a");
+
+        console.log("spoon");
+        </script>
+
+
+        <script>
+
+        // Asynchronous
+
+
+         console.log("I");
+
+         console.log("eat");
+
+         setTimeout(()=>{ 
+            console.log("icecream"); -->
+         <!-- },4000)
+        
+
+         console.log("with a");
+
+         console.log("spoon"); -->
+    </script>
+       
+        <script>
+             // CALLBACK
+            // function one(call_two){
+                
+            //     console.log("step 1 complete. please call step 2");
+            //     call_two()
+            // }
+
+            // function two(){
+            //     console.log("step 2");
+            // }
+            //  one(two);
+
+
+            let stock={
+                fruits:["apple","strawberry","grapes","banana"],
+                liquid:["water","ice"],
+                holder:["cone","cup","stick"],
+              toppings:["choclates","peanuts"]
+            }
+
+            let order=(fruits_name,call_production) =>{
+
+                setTimeout(()=>{
+                    console.log(`${stock.fruits[fruits_name]} was selected`);
+ 
+                call_production()
+                },2000)
+                
+            };
+
+            let production=() =>{
+
+              setTimeout(()=>{
+                console.log("production has started")
+                    setTimeout(()=>{
+                     console.log( "fruit has been chopped");
+                        setTimeout(()=>{
+                           console.log(`${stock.liquid[0]} and ${stock.liquid[1]} was added`);
+                               setTimeout(()=>{
+                                  console.log("machine was started");
+                                     setTimeout(()=>{
+                                        console.log(`icecream was placed on ${stock.holder[0]}`)
+                                         setTimeout(()=>{
+                                            console.log(`${stock.toppings[0]} was added as toppings`);
+                                            setTimeout(()=>{
+                                                console.log("serve the icecream");
+                                            },2000)
+                                         },3000)
+                                     },2000)
+                               },1000)    
+                        },1000)
+                    },2000)
+                },1000)
+ };
+           
+            order( "0" ,production)
+        </script>
+        
+    
+</body>
+</html>
