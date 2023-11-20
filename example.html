@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       var x = 1;
+       a();
+       b();
+       console.log(x);                                                                                                                      
+
+       function a(){
+        var x=10;
+        console.log(x);
+       }
+
+       function b(){
+        var x=100;
+        console.log(x);
+       }
+    </script>
+    <script>
+        const radius=[3,1,2,4]
+
+        const area=function(radius){
+            return Math.PI*radius*radius;
+        } 
+        const circumferance=function(radius){
+            return 2 * Math.PI * radius;
+        }
+        const diameter=function(radius){
+            return 2 * radius
+        }
+
+
+        const calculate=function(radius,logic){
+            const output =[];
+            for(i=0;i<radius.length;i++){
+                output.push(logic(radius[i]))
+            }
+            return output;
+        }
+
+
+        console.log(calculate(radius,area));
+        console.log(calculate(radius,circumferance));
+        console.log(calculate(radius,diameter));
+        // here, calculate is the higher order function. area ,circumference,diameter are callback functions
+        //   map is a higher order function 
+    </script>
+</body>
+</html>

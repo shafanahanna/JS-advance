@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fetch.css">
+    <title>FETCH FAKE API</title>
+</head>
+<body>
+    <h1 class="heading">Fetch fake store API</h1>
+    <div id="cards">
+         <div class="card">
+           <h1 class="title">title</h1>
+           <img src="apple.jpg" alt="img" class="images">
+           <p>description</p>
+           <p class="category">Category</p>
+           <p class="price">Price</p>
+        </div>   
+    </div>
+
+        
+    <script>
+        fetch('https://fakestoreapi.com/products')
+        .then((data)=>{
+            console.log(data);
+            return data.json();
+        })
+        .then((completedata)=>{
+            let data1="";
+            completedata.map((values)=>{
+                data1=`
+        <div class="card">
+           <h1 class="title">${values.title}</h1>
+           <img src="${values.image}" alt="img" class="images">
+           <p>${values.description}</p>
+           <p class="category">${values.category}</p>
+           <p class="price">${values.price}</p>
+        </div> `  
+        });
+        document.getElementById("cards").innerHTML=data1;
+    })
+         .catch((error)=>{
+            console.log("error")
+        })
+  
+    </script>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML form to Google Sheet</title>
+</head>
+<body>
+    <h1 id="msg"></h1>
+    <form>
+    <!-- <form action="https://script.google.com/macros/s/AKfycbzYJ4g9duTfbIjLUW9_q0cHRPVjRncuXieZmCP7r-QHmPBAB5VWKGg1IzpxfOiRlDCH2w/exec" method="post"> -->
+        <input type="text" name="name" placeholder="Name"><br><br>
+        <input type="email" name="email" placeholder="Email"><br><br>
+        <input type="tel" name="phone" placeholder="Phone"><br><br>
+        <input type="submit" id="sub">
+    </form>
+    <script>
+        let form = document.querySelector("form");
+        form.addEventListener('submit',(e)=>{
+            e.preventDefault()                                                               ;
+            document.querySelector("#sub").value="Submitting"
+            let data = new FormData(form);
+            fetch('https://script.google.com/macros/s/AKfycbzYJ4g9duTfbIjLUW9_q0cHRPVjRncuXieZmCP7r-QHmPBAB5VWKGg1IzpxfOiRlDCH2w/exec',{
+                method:"POST",
+                body:data
+            })
+            .then(res => res.text())
+            .then(data => {
+                document.querySelector("#msg").innerHTML=data;
+                document.querySelector("#sub").value="Submit"
+            })
+        })
+    </script>
+</body>
+</html>
