@@ -22,22 +22,22 @@ createButton('feature 2',async ()=>{
 
 
 
-// let isGreen =true;
-// let handle = null;
-// function changeBg(){
-//     if(!handle){
-//    handle = setInterval(() => {
-//      document.body.style.background = isGreen ? 'green':'blue'; 
-//      isGreen =!isGreen;  
-//     },500)
-//  }
-// }
+let isGreen =true;
+let handle = null;
+function changeBg(){
+    if(!handle){
+   handle = setInterval(() => {
+     document.body.style.background = isGreen ? 'green':'blue'; 
+     isGreen =!isGreen;  
+    },500)
+ }
+}
 
-// function stopChangingBg(){
-//     if(handle){    
-//     clearInterval(handle);
-//     handle = null;
-//     document.body.style.background='none';
-//     }
-// }
+function stopChangingBg(){
+    if(handle){    
+    clearInterval(handle);
+    handle = null;
+    document.body.style.background='none';
+    }
+}
 
